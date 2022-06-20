@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Release Notes - Apache RocketMQ - Version 4.9.4 - Apache RocketMQ</title>
+
+
+
+
+<meta name="description" content="Below is a summary of the issues addressed in the 4.9.4 release of RocketMQ. For full documentation of the release, a guide to get started, please refer to Quick Start.">
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Apache RocketMQ">
+<meta property="og:title" content="Release Notes - Apache RocketMQ - Version 4.9.4">
+
+
+
+
+  <meta property="og:description" content="Below is a summary of the issues addressed in the 4.9.4 release of RocketMQ. For full documentation of the release, a guide to get started, please refer to Quick Start.">
+
+
+
+  <meta name="twitter:site" content="@ApacheRocketMQ">
+  <meta name="twitter:title" content="Release Notes - Apache RocketMQ - Version 4.9.4">
+  <meta name="twitter:description" content="Below is a summary of the issues addressed in the 4.9.4 release of RocketMQ. For full documentation of the release, a guide to get started, please refer to Quick Start.">
+  <meta name="twitter:url" content="">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2022-06-20T00:00:00+00:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Apache RocketMQ",
+      "url" : null,
+      "sameAs" : null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="aand0XZkSGsziuC-UPD4ZJniFD0m0JhGx6820y2mAQY" />
+
+
+  <meta name="baidu-site-verification" content="wD06EbDRkQ" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Apache RocketMQ Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="/">Apache RocketMQ</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="/docs/quick-start/">Documentation</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="/year-archive/">Blog</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="/community/">Community</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="/users/">Users</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="/about/origin/">About</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/rmq-logo.png" class="author__avatar" alt="" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name"></h3>
+    
+      <p class="author__bio" itemprop="description">
+        An open source distributed messaging and streaming data platform.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Hangzhou, China</span>
+        </li>
+      
+
+      
+        <li>
+          <a href="http://rocketmq.apache.org" itemprop="url">
+            <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Website
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:dev@rocketmq.apache.org">
+            <meta itemprop="email" content="dev@rocketmq.apache.org" />
+            <i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/ApacheRocketMQ" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/apache/rocketmq" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/questions/tagged/rocketmq" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.quora.com/topic/RocketMQ" itemprop="sameAs">
+            <i class="fa fa-fw" aria-hidden="true"><strong>Q</strong></i> Quora
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Release Notes - Apache RocketMQ - Version 4.9.4">
+    <meta itemprop="description" content="Below is a summary of the issues addressed in the 4.9.4 release of RocketMQ. For full documentation of the release, a guide to get started, please refer to Quick Start.">
+    <meta itemprop="datePublished" content="June 20, 2022">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Release Notes - Apache RocketMQ - Version 4.9.4
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  9 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Below is a summary of the issues addressed in the 4.9.4 release of RocketMQ. For full documentation of the release, a guide to get started, please refer to <a href="/docs/quick-start/">Quick Start</a>.</p>
+
+<h2> Download the 4.9.4 release</h2>
+
+<ul>
+  <li>Source: <a href="https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.9.4/rocketmq-all-4.9.4-source-release.zip">rocketmq-all-4.9.4-source-release.zip</a> [<a href="https://www.apache.org/dist/rocketmq/4.9.4/rocketmq-all-4.9.4-source-release.zip.asc">PGP</a>] [<a href="https://www.apache.org/dist/rocketmq/4.9.4/rocketmq-all-4.9.4-source-release.zip.sha512">SHA512</a>]</li>
+  <li>Binary: <a href="https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.9.4/rocketmq-all-4.9.4-bin-release.zip">rocketmq-all-4.9.4-bin-release.zip</a> [<a href="https://www.apache.org/dist/rocketmq/4.9.4/rocketmq-all-4.9.4-bin-release.zip.asc">PGP</a>] [<a href="https://www.apache.org/dist/rocketmq/4.9.4/rocketmq-all-4.9.4-bin-release.zip.sha512">SHA512</a>]</li>
+</ul>
+
+<h2 id="improvement">Improvement</h2>
+<ul>
+  <li>[ISSUE #3887 ] fix validate fail after update acl by @yuz10 in https://github.com/apache/rocketmq/pull/3888</li>
+  <li>[ISSUE #3898]fix the spell in MQClientAPIImpl by @zhangjidi2016 in https://github.com/apache/rocketmq/pull/3899</li>
+  <li>[ISSUE #3890] add ‘brokerAddress’ param for ConsumerConnectionSubCommand by @MatrixHB in https://github.com/apache/rocketmq/pull/3891</li>
+  <li>[ISSUE #3877] Remove unnecessary Exception thrown by MQClientAPIImpl#createSubscriptionGroup by @HScarb in https://github.com/apache/rocketmq/pull/3880</li>
+  <li>[ISSUE #2993] fix testTruncateCQ on Windows by releasing mapped files. by @HScarb in https://github.com/apache/rocketmq/pull/3865</li>
+  <li>[ISSUE #3859] enhance the cal of latency for putting message by @cserwen in https://github.com/apache/rocketmq/pull/3862</li>
+  <li>[ISSUE #3911] Fix ThreadLocalIndexTest does not actually assert the value by @HScarb in https://github.com/apache/rocketmq/pull/3912</li>
+  <li>[ISSUE #3875]  fix unable to delete last acl account. by @yuz10 in https://github.com/apache/rocketmq/pull/3876</li>
+  <li>[ISSUE #3918] readme add rocketmq dashboard link by @cserwen in https://github.com/apache/rocketmq/pull/3919</li>
+  <li>[ISSUE #3915] readme add rocketmq connect link by @odbozhou in https://github.com/apache/rocketmq/pull/3916</li>
+  <li>[ISSUE #3900] Fix that wrong dir is created when using mult-dirs storage by @cserwen in https://github.com/apache/rocketmq/pull/3901</li>
+  <li>[#3903] Add topic validation, forbid sending message to system topic  by @sunxi92 in https://github.com/apache/rocketmq/pull/3904</li>
+  <li>fix some docs error by @Hen1ng in https://github.com/apache/rocketmq/pull/3926</li>
+  <li>[ISSUE #3896] fix log format error by @panzhi33 in https://github.com/apache/rocketmq/pull/3897</li>
+  <li>Improve Issue Template by @lizhanhui in https://github.com/apache/rocketmq/pull/3932</li>
+  <li>Add language code for Rust by @lizhanhui in https://github.com/apache/rocketmq/pull/3931</li>
+  <li>[ISSUE #3561] fix by @ymingxu in https://github.com/apache/rocketmq/pull/3936</li>
+  <li>Update best_practice.md by @HMYDK in https://github.com/apache/rocketmq/pull/3939</li>
+  <li>[ISSUE #3950] Anonymous new Callable()  replaced with lambda by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/3951</li>
+  <li>[ISSUE #3957] fix #3957 LmqConsumerOffsetManager deserialize error by @tianliuliu in https://github.com/apache/rocketmq/pull/3958</li>
+  <li>docs: Add the link to Apache RocketMQ MQTT in the readme.md by @XiaoyiPeng in https://github.com/apache/rocketmq/pull/3971</li>
+  <li>fix a flaky test by @MundaneImmortal in https://github.com/apache/rocketmq/pull/3959</li>
+  <li>[ISSUE# 3966] Fix using wrong offset when deliver in ScheduleService by @RongtongJin in https://github.com/apache/rocketmq/pull/3967</li>
+  <li>[ISSUE #3882]Nameserver change modify <code class="language-plaintext highlighter-rouge">topicQueueTable</code> in <code class="language-plaintext highlighter-rouge">RouteInfoManager</code> by @WJL3333 in https://github.com/apache/rocketmq/pull/3881</li>
+  <li>[ISSUE #3955] delete useless check by @ferrirW in https://github.com/apache/rocketmq/pull/3956</li>
+  <li>[ISSUE#3983] Duplicated warn log in class DefaultMQProducerImpl is unnecessary. by @XiaoyiPeng in https://github.com/apache/rocketmq/pull/3984</li>
+  <li>[ISSUE #3985] Remove shuffle operation before sorting the list of ‘FaultItem’. by @XiaoyiPeng in https://github.com/apache/rocketmq/pull/3986</li>
+  <li>[#3942]If both acl and message trace are enabled and the default topic RMQ_SYS_TRACE_TOPIC is used for message trace, you don’t need to add the PUB permission of RMQ_SYS_TRACE_TOPIC topic to the acl config. by @sunxi92 in https://github.com/apache/rocketmq/pull/3943</li>
+  <li>[ISSUE #4000]Fix the warn log input in command tools by @zhangjidi2016 in https://github.com/apache/rocketmq/pull/4001</li>
+  <li>Add shutdown script for batchproducer.sh by @humkum in https://github.com/apache/rocketmq/pull/4015</li>
+  <li>[ISSUE #4002]Optimize some mqadmin command execution results output by @zhangjidi2016 in https://github.com/apache/rocketmq/pull/4003</li>
+  <li>[ISSUE #3924] It may be better to change the method StoreStatsService#initPutMessageDistributeTime() to private. by @XiaoyiPeng in https://github.com/apache/rocketmq/pull/3925</li>
+  <li>fix docs error by @Hen1ng in https://github.com/apache/rocketmq/pull/4023</li>
+  <li>[ISSUE #4028] wrong log output by @panzhi33 in https://github.com/apache/rocketmq/pull/4029</li>
+  <li>[ISSUE #4004] Initialize deliverPendingTable, When the ScheduleService is started by @HScarb in https://github.com/apache/rocketmq/pull/4032</li>
+  <li>[ISSUE #4040] Unnecessary  toString methods deleted by @hjl11 in https://github.com/apache/rocketmq/pull/4041</li>
+  <li>[Minor] RemotingCommandException is not thrown in a method by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4030</li>
+  <li>[ISSUE #4048] Make storePathCommitLog base on storePathRootDir by @HScarb in https://github.com/apache/rocketmq/pull/4049</li>
+  <li>[ISSUE #4053] NamesrvController code optimization by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4027</li>
+  <li>[ISSUE #4054] fix doc format by @Git-Yang in https://github.com/apache/rocketmq/pull/4055</li>
+  <li>[ISSUE #4050] fix origin messsage id missing from dead leetter meessage by @Git-Yang in https://github.com/apache/rocketmq/pull/4051</li>
+  <li>fix clusterRT and checkMsgSendRT  by @meateggmilk in https://github.com/apache/rocketmq/pull/4047</li>
+  <li>[ISSUE #3699] fix unit test by @Git-Yang in https://github.com/apache/rocketmq/pull/3700</li>
+  <li>[ISSUE #4035] rename some commands by @yuz10 in https://github.com/apache/rocketmq/pull/4036</li>
+  <li>[ISSUE #4048] Make storePathCommitLog base on storePathRootDir by @HScarb in https://github.com/apache/rocketmq/pull/4057</li>
+  <li>[Document] Update user_guide.md: Fix for link. by @dugenkui03 in https://github.com/apache/rocketmq/pull/4085</li>
+  <li>[ISSUE #4110] Update dledger version to 0.2.4 by @RongtongJin in https://github.com/apache/rocketmq/pull/4111</li>
+  <li>[ISSUE #4125] Anonymous new Runnable() can be replaced with lambda by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4031</li>
+  <li>Fixed typo in getStartIndex method in RocketMQ_Example.md file by @zfs9521 in https://github.com/apache/rocketmq/pull/4012</li>
+  <li>[ISSUE #3940]Optimize AllocateMessageQueueStrategy by @zhangjidi2016 in https://github.com/apache/rocketmq/pull/3941</li>
+  <li>[ISSUE #4129] Fix typo in CommitLog.java by @drgnchan in https://github.com/apache/rocketmq/pull/4126</li>
+  <li>Bump junit from 4.12 to 4.13.1 in /test by @dependabot in https://github.com/apache/rocketmq/pull/4119</li>
+  <li>fix some error by @Hen1ng in https://github.com/apache/rocketmq/pull/4136</li>
+  <li>[ISSUE #4155] fix system property setting causing data conflicts in acl test by @caigy in https://github.com/apache/rocketmq/pull/4156</li>
+  <li>[ISSUE #4150] Fix spelling problem on docs/en by @gogodjzhu in https://github.com/apache/rocketmq/pull/4141</li>
+  <li>[ISSUE #4033] fix async deliver msg will resend forever when serivce not avliable by @Git-Yang in https://github.com/apache/rocketmq/pull/4045</li>
+  <li>Optimize the logic of MessageDecoder#decodeMessageId method by @BurningCN in https://github.com/apache/rocketmq/pull/4082</li>
+  <li>[ISSUE #4103] Simplify string-list-join in <code class="language-plaintext highlighter-rouge">Message</code> by @dugenkui03 in https://github.com/apache/rocketmq/pull/4104</li>
+  <li>Replace Charset.forName(“UTF-8”) with StandardCharsets.UTF_8 by @6U-U9 in https://github.com/apache/rocketmq/pull/4024</li>
+  <li>MINOR:cleanup code by @Kvicii in https://github.com/apache/rocketmq/pull/4013</li>
+  <li>Remove file lock related code snippets in index file by @BurningCN in https://github.com/apache/rocketmq/pull/4135</li>
+  <li>[ISSUE #4123] Explicit type argument can be replaced with &lt;&gt; for RouteInfoManager by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4124</li>
+  <li>[ISSUE #4175] Prevent update topic on slave by @HScarb in https://github.com/apache/rocketmq/pull/4176</li>
+  <li>[ISSUE #4160]remove the final modifier of a method which is already in a final class by @xyjForCoding in https://github.com/apache/rocketmq/pull/4163</li>
+  <li>[ISSUE #4165] add new line in sendMsgStatus by @yuz10 in https://github.com/apache/rocketmq/pull/4166</li>
+  <li>[ISSUE #4185] Explicit type argument can be replaced with &lt;&gt; by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4186</li>
+  <li>[ISSUE #4127]  [BrokerOuterAPI] Anonymous new Runnable() can be replaced with lambda by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4128</li>
+  <li>[ISSUE #4187]Support async publish in producer benchmark by @HScarb in https://github.com/apache/rocketmq/pull/4188</li>
+  <li>[ISSUE #4183] When the reportSlaveMaxOffset method fails, end the current loop early by @BurningCN in https://github.com/apache/rocketmq/pull/4184</li>
+  <li>[ISSUE #4181] Prevent int overflow in <code class="language-plaintext highlighter-rouge">TraceContext</code> by @dugenkui03 in https://github.com/apache/rocketmq/pull/4182</li>
+  <li>[ISSUE #3914] Support multi dirs storage in DLedger by @cserwen in https://github.com/apache/rocketmq/pull/4122</li>
+  <li>[ISSUE #4147] javadoc: Fix the problem described in the warning message prompted by the IDE. by @XiaoyiPeng in https://github.com/apache/rocketmq/pull/4148</li>
+  <li>[ISSUE #4107] rocketmq-tools should not depend on rocketmq-store by @yuz10 in https://github.com/apache/rocketmq/pull/4108</li>
+  <li>update cn design doc by @samz406 in https://github.com/apache/rocketmq/pull/4205</li>
+  <li>[Optimization] Replace Timer to ScheduleExecutorService by @Oliverwqcwrw in https://github.com/apache/rocketmq/pull/4208</li>
+  <li>[ISSUE 3585] [Part B] Improve encode/decode performance by @areyouok in https://github.com/apache/rocketmq/pull/3588</li>
+  <li>[ISSUE #4099]Optimized the performance of sending traceMessage in <code class="language-plaintext highlighter-rouge">AsyncTraceDispatcher</code> by @dugenkui03 in https://github.com/apache/rocketmq/pull/4180</li>
+  <li>[Docs] Add squash guide and apache contributors guide link in CONTRIBUTING by @ferrirW in https://github.com/apache/rocketmq/pull/4221</li>
+  <li>[ISSUE #4130] Remove the exception which will never be thrown by method from method signature by @dugenkui03 in https://github.com/apache/rocketmq/pull/4132</li>
+  <li>format code KVConfigManager by @123monkey in https://github.com/apache/rocketmq/pull/4222</li>
+  <li>[ISSUE #4211] Fix diskMaxUsedSpaceRatio does not take effect in dLedger by @cserwen in https://github.com/apache/rocketmq/pull/4212</li>
+  <li>[ISSUE #4215] OFFSET_OVERFLOW_BADLY will lead to consumption from begin, a large number of repeated consumption by @iamqq23ue in https://github.com/apache/rocketmq/pull/4219</li>
+  <li>[ISSUE #4237] REMOVE unnecessary final modifier by @yuancheng314 in https://github.com/apache/rocketmq/pull/4238</li>
+  <li>[ISSUE #4239] Use function computeIfAbsent replace if by @MinXie1209 in https://github.com/apache/rocketmq/pull/4231</li>
+  <li>[Optimization] Remove redundant queue by @Oliverwqcwrw in https://github.com/apache/rocketmq/pull/4240</li>
+  <li>[ISSUE #4216] fix HmacSHA1 not available when use benchmark by @francisoliverlee in https://github.com/apache/rocketmq/pull/4217</li>
+  <li>[ISSUE #4203] Support zstd/lz4 compression to improve send/receive performance by @ferrirW in https://github.com/apache/rocketmq/pull/4213</li>
+  <li>[ISSUE-#4251]Add batch flag by @dongeforever in https://github.com/apache/rocketmq/pull/4252</li>
+  <li>[ISSUE #3857] refact getPublishTopicList method and subscriptions method redundant code by @xichaodong in https://github.com/apache/rocketmq/pull/3879</li>
+  <li>[ISSUE #4254] use function computeIfAbsent replace if  by @MinXie1209 in https://github.com/apache/rocketmq/pull/4255</li>
+  <li>[ISSUE #4227] fix ACL tests on Windows by @HScarb in https://github.com/apache/rocketmq/pull/4278</li>
+  <li>[ISSUE #4284] Add protocols to readme and delete the description of language clients by @123liuziming in https://github.com/apache/rocketmq/pull/4285</li>
+  <li>[ISSUE #4286] add link of rocketmq-site to readme by @logicalee in https://github.com/apache/rocketmq/pull/4288</li>
+  <li>[ISSUE #4291] Add  some description text to README by @hyl-xidian in https://github.com/apache/rocketmq/pull/4294</li>
+  <li>[ISSUE #4283] add an description in readme.  by @TuringLiu in https://github.com/apache/rocketmq/pull/4293</li>
+  <li>fix: delete a feature in Readme by @Jacob-Mr-Yang in https://github.com/apache/rocketmq/pull/4298</li>
+  <li>[ISSUE #4304] Fix license check failures by @caigy in https://github.com/apache/rocketmq/pull/4305</li>
+  <li>[ISSUE #4310] Optimize serviceProvider’s code by @hzh0425 in https://github.com/apache/rocketmq/pull/4311</li>
+  <li>[ISSUE #3962] Fix variable name in MappedFile#isAbleToCommit() by @tsunghanjacktsai in https://github.com/apache/rocketmq/pull/4312</li>
+  <li>[ISSUE # 4308] Make some variables to be final in brokerController by @hzh0425 in https://github.com/apache/rocketmq/pull/4309</li>
+  <li>Fix typo in the broker’s log path by @gobbq in https://github.com/apache/rocketmq/pull/4307</li>
+  <li>[ISSUE #4315] Optimize ha module’s code by @hzh0425 in https://github.com/apache/rocketmq/pull/4316</li>
+  <li>[ISSUE #4320] Anonymous new PrivilegedAction can be replaced with lambda by @hzh0425 in https://github.com/apache/rocketmq/pull/4321</li>
+  <li>[ISSUE #4332] Remove duplicate code by @coderbruis in https://github.com/apache/rocketmq/pull/4331</li>
+  <li>[ISSUE #4317] Fix for statement does not loop by @coderbruis in https://github.com/apache/rocketmq/pull/4314</li>
+  <li>[ISSUE #4318]make some variables to be final in IndexHeader by @hzh0425 in https://github.com/apache/rocketmq/pull/4319</li>
+  <li>[ISSUE #4287]add detail descriptions to readme by @xyjForCoding in https://github.com/apache/rocketmq/pull/4295</li>
+  <li>[ISSUE #4292] Add description to the community list of README file by @terrance-swn in https://github.com/apache/rocketmq/pull/4296</li>
+  <li>[ISSUE #4289] Add some detail descriptions to README by @wzgliang in https://github.com/apache/rocketmq/pull/4303</li>
+  <li>Add a rough guide for quick start by @gobbq in https://github.com/apache/rocketmq/pull/4302</li>
+  <li>[ISSUE #4327] Init collection size by @Oliverwqcwrw in https://github.com/apache/rocketmq/pull/4214</li>
+  <li>[ISSUE #4326] Optimized code by @Oliverwqcwrw in https://github.com/apache/rocketmq/pull/4258</li>
+  <li>[ISSUE #4325] Remove redundant exception to improve readability by @Oliverwqcwrw in https://github.com/apache/rocketmq/pull/4279</li>
+  <li>[ISSUE #4335] Replace deprecated api by @Oliverwqcwrw in https://github.com/apache/rocketmq/pull/4336</li>
+  <li>[ISSUE #4323] Optimized openmessaging example code by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4347</li>
+  <li>[ISSUE #3804]Commit consumption offset with specific MessageQueue. by @ni-ze in https://github.com/apache/rocketmq/pull/3838</li>
+  <li>[ISSUE #4362] remove redundancy group name check of null in method org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl#checkConfig by @GLBB in https://github.com/apache/rocketmq/pull/4363</li>
+  <li>Formatting code of maven dependencies management by @aaron-ai in https://github.com/apache/rocketmq/pull/4371</li>
+  <li>[ISSUE #4372] Make it compile with Java9+ by @aaron-ai in https://github.com/apache/rocketmq/pull/4373</li>
+  <li>[ISSUE #4067] fix: Add TLS configuration documents. by @chris-joys in https://github.com/apache/rocketmq/pull/4387</li>
+  <li>[ISSUE #4391]optimize for printObjectProperties by @dugenkui03 in https://github.com/apache/rocketmq/pull/4392</li>
+  <li>[ISSUE #4323] Schedule example add the default NamesrvAddr by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4352</li>
+  <li>[ISSUE #4226] Message length exceeds the maximum length when sendback by @ni-ze in https://github.com/apache/rocketmq/pull/4338</li>
+  <li>Something in docs may cause confusion by @Dios314 in https://github.com/apache/rocketmq/pull/4403</li>
+  <li>[iSSUE-4396] Support get all producer on one broker by @francisoliverlee in https://github.com/apache/rocketmq/pull/4395</li>
+  <li>[ISSUE #4410] Optimize method org.apache.rocketmq.common.message.MessageDecoder#messageProperties2String, remove useless check by @GLBB in https://github.com/apache/rocketmq/pull/4411</li>
+  <li>[ISSUE #4323] Optimized namespace example code by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4346</li>
+  <li>[ISSUE #2435] Solve the problem that DefaultMQProducer#request() sends messages and waits for timeout synchronously by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4313</li>
+  <li>[ISSUE #4323] Quickstart adds the default NamesrvAddr by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4322</li>
+  <li>[ISSUE #4323] Batch example add the default NamesrvAddr by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4328</li>
+  <li>[ISSUE #4323] Broadcast example add the default NamesrvAddr by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4344</li>
+  <li>[ISSUE #4323] tracemessage example add the default NamesrvAddr by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4353</li>
+  <li>[ISSUE #4323] Transaction example add the default NamesrvAddr by @li-xiao-shuang in https://github.com/apache/rocketmq/pull/4354</li>
+  <li>[ISSUE #23] solve error Algorithm HmacSHA1 not available when your java_home is not found by @TianMing2018 in https://github.com/apache/rocketmq/pull/3869</li>
+  <li>[ISSUE #4416] Update dledger version to 0.2.6 by @RongtongJin in https://github.com/apache/rocketmq/pull/4417</li>
+  <li>[ISSUE #4377]Unnecessary null check before method call by @coderbruis in https://github.com/apache/rocketmq/pull/4378</li>
+  <li>[ISSUE #4365]  acl PlainPermissionManager key file paths set to same by @fulln in https://github.com/apache/rocketmq/pull/4366</li>
+  <li>[ISSUE #4263]Delete topic route info based on cluster when delete topic. by @sunxi92 in https://github.com/apache/rocketmq/pull/4268</li>
+  <li>[ISSUE #4419] Upgrade maven-checkstyle-plugin to 3.1.2 by @drpmma in https://github.com/apache/rocketmq/pull/4420</li>
+  <li>[#4151]Add option p to the updateGlobalWhiteAddr command. by @sunxi92 in https://github.com/apache/rocketmq/pull/4152</li>
+  <li>Let name server generate valid JSON response when process topic route queries by @lizhanhui in https://github.com/apache/rocketmq/pull/4432</li>
+  <li>[ISSUE #4349] fix negative index when index reach Integer.MAX_VALUE by @Wushiyii in https://github.com/apache/rocketmq/pull/4447</li>
+  <li>[ISSUE #4455] add a schedule task to update namesrv address by @cserwen in https://github.com/apache/rocketmq/pull/4456</li>
+  <li>[ISSUE #4426]fix ACL issue when sending messages back  by @caigy in https://github.com/apache/rocketmq/pull/4457</li>
+  <li>[ISSUE #4037] Add DeleteExpiredCommitLogSubCommand by @HScarb in https://github.com/apache/rocketmq/pull/4038</li>
+  <li>[ISSUE #4058] DLedgerCommitLog support LMQ by @chaiyx in https://github.com/apache/rocketmq/pull/4059</li>
+  <li>Generate legal JSON response conditionally by @lizhanhui in https://github.com/apache/rocketmq/pull/4473</li>
+  <li>[ISSUE #3906] Mark stream-related request by RequestType by @drpmma in https://github.com/apache/rocketmq/pull/4430</li>
+</ul>
+
+<h2 id="bug">Bug</h2>
+<ul>
+  <li>[Issue #3922] Fix bugs in ACL modification by @caigy in https://github.com/apache/rocketmq/pull/3927</li>
+  <li>fix mac 12+ slow bug by @luky116 in https://github.com/apache/rocketmq/pull/4010</li>
+  <li>Bugfix DefaultMessageStore#getEarliestMessageTime() bug in Dledger mode by @HScarb in https://github.com/apache/rocketmq/pull/4168</li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#release-notes" class="page__taxonomy-item" rel="tag">Release_Notes</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#rocketmq" class="page__taxonomy-item" rel="tag">RocketMQ</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#version" class="page__taxonomy-item" rel="tag">Version</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#release-notes" class="page__taxonomy-item" rel="tag">Release_Notes</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-06-20T00:00:00+00:00">June 20, 2022</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=ApacheRocketMQ&text=Release Notes - Apache RocketMQ - Version 4.9.4 /release_notes/release-notes-4.9.4/" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=/release_notes/release-notes-4.9.4/" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=/release_notes/release-notes-4.9.4/" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=/release_notes/release-notes-4.9.4/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/release_notes/release-notes-rocketmq-streams-1.0.1-preview/" class="pagination--pager" title="Release Notes - Apache RocketMQ Streams - Version 1.0.1-preview
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+    <h4 class="page__comments-title">Leave a Comment</h4>
+    <section id="disqus_thread"></section>
+  
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      
+        <h4 class="page__related-title">You May Also Enjoy</h4>
+      
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/release_notes/release-notes-rocketmq-streams-1.0.1-preview/" rel="permalink">Release Notes - Apache RocketMQ Streams - Version 1.0.1-preview
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Below is a summary of the issues addressed in the 1.0.1-preview release of RocketMQ Streams. For full documentation of the release, a guide to get started, p...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/release_notes/release-notes-rocketmq-spring-2.2.2/" rel="permalink">Release Notes - Apache RocketMQ Spring - Version 2.2.2
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Below is a summary of the issues addressed in the version 2.2.2 release of RocketMQ Spring. For full documentation of the release, a guide to get started, pl...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/release_notes/release-notes-5.0.0-ALPHA/" rel="permalink">Release Notes - Apache RocketMQ - Version 5.0.0-ALPHA
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Below is a summary of the issues addressed in the 5.0.0-ALPHA release of RocketMQ. For full documentation of the release, a guide to get started, please refe...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/release_notes/release-notes-4.9.3/" rel="permalink">Release Notes - Apache RocketMQ - Version 4.9.3
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Below is a summary of the issues addressed in the 4.9.3 release of RocketMQ. For full documentation of the release, a guide to get started, please refer to Q...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <style type="text/css">
+  div.columns   { float: left; margin-left: 10px;}
+  div.clear     { clear: both; } 
+</style>
+<div>
+  <div class="columns">
+    <a href="https://www.apache.org/"><img src="/assets/images/feather-small.gif" alt="Apache Software Foundation" style="height: 88px !important" /></a>
+  </div>
+  <div class="columns" style="width: 80%">
+    <div class="page__footer-follow">
+      <ul class="social-icons">
+        
+          <li><strong>Follow:</strong></li>
+        
+        
+          <li><a href="https://twitter.com/ApacheRocketMQ"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+        
+        
+          <li><a href="https://github.com/apache/rocketmq"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+        
+        <li><a href="/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+      </ul>
+    </div>
+
+    <div class="page__footer-copyright">Copyright &copy; 2022 <a href="http://www.apache.org/">The Apache Software Foundation</a>. Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0.</a></div>
+    <div class="page__footer-copyright">Apache RocketMQ, RocketMQ, Apache, the Apache feather logo and the Apache RocketMQ logo are trademarks of The Apache Software Foundation.</div>
+    <br>
+    <div class="page__footer-copyright"><a href="https://www.apache.org/licenses/">License</a> | <a href="https://www.apache.org/security/">Security</a> | <a href="https://www.apache.org/foundation/thanks.html">Thanks</a> | <a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></div>
+    <br>
+	<div>
+      <a  href="https://www.apache.org/events/current-event.html">
+        <img src="https://www.apache.org/events/current-event-234x60.png" />
+      </a>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+      </footer>
+    </div>
+
+    <script src="/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89603173-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?36428f2b841d08e7405724cbf7f860d2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+  
+  <script type="text/javascript">
+  	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  	var disqus_shortname = 'rocketmq';
+
+  	/* * * DON'T EDIT BELOW THIS LINE * * */
+  	(function() {
+  		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  	})();
+
+  	/* * * DON'T EDIT BELOW THIS LINE * * */
+  	(function () {
+  		var s = document.createElement('script'); s.async = true;
+  		s.type = 'text/javascript';
+  		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  	}());
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+  </body>
+</html>
