@@ -120,6 +120,84 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
           path: "./forth-blog",
         },
       ],
+      [
+        '@docusaurus/plugin-client-redirects', {
+          redirects: [
+            {
+              from: '/dowloading/releases/',
+              to: '/download'
+            },
+            {
+              from: '/year-archive/',
+              to: '/third-blog'
+            },
+            {
+              from: '/users/',
+              to: '/blog'
+            },
+            {
+              from: '/about/contact/',
+              to: '/contact'
+            },
+            {
+              from: '/about/origin/',
+              to: '/origin'
+            },
+            {
+              from: '/about/team/',
+              to: '/team'
+            },
+            {
+              from: '/about/rewards/',
+              to: '/forth-blog'
+            },
+            {
+              from: '/docs/rmq-arc',
+              to: '/docs/介绍/03whatis'
+            },
+            {
+              from: '/docs/rmq-deployment/',
+              to: '/docs/部署与运维/15deploy'
+            },
+            {
+              from: '/docs/motivation/',
+              to: '/docs/'
+            },
+            {
+              from: ['/docs/quickstart/', '/docs/quick-start'],
+              to: '/docs/介绍/02quickstart'
+            },
+            {
+              from: '/docs/how-to-contribute/',
+              to: '/docs/贡献指南/29how-to-contribute'
+            },
+            {
+              from: '/docs/code-guidelines/',
+              to: '/docs/贡献指南/30code-guidelines'
+            },
+            {
+              from: '/docs/pull-request/',
+              to: '/docs/贡献指南/31pull-request'
+            },
+            {
+              from: '/docs/release-manual',
+              to: '/docs/贡献指南/32release-manual'
+            },
+            {
+              from: '/docs/cli-admin-tool/',
+              to: '/docs/部署与运维/16admintool'
+            },
+            {
+              from: '/docs/faq/',
+              to: '/docs/最佳实践/22FAQ'
+            },
+            {
+              from: '/docs/system-config/',
+              to: '/docs/最佳实践/19JVMOS'
+            }
+          ]
+        }
+      ]
     ],
 
     themeConfig:
@@ -137,13 +215,18 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
         },
         navbar: {
           title: "Apache RocketMQ",
-          // hideOnScroll: true,
+        // hideOnScroll: true,
           logo: {
             alt: "My Site Logo",
             src: "img/Apache_RocketMQ_logo.svg.png",
           },
 
           items: [
+            {
+              href: 'https://github.com/apache/rocketmq',
+              label: 'GitHub',
+              position: 'right',
+            },
             {
           type: 'localeDropdown',
           position: 'right',
@@ -186,12 +269,6 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
                 // ... more items
               ],
             },
-           
-            // {
-            //   href: 'https://github.com/apache/rocketmq',
-            //   label: 'GitHub',
-            //   position: 'right',
-            // },
 
             // {to: '/download', label: '社区', position: 'right'},
 
@@ -202,6 +279,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
               items: [
                 // { to: "/info", label: "项目信息" },
                 { to: "/contact", label: "参与社区" },
+                { to: "/origin", label: "创始团队" },
                 { to: "/team", label: "贡献团队" },
                 { to: "/docs/贡献指南/29how-to-contribute", label: "贡献说明" },
                 // ... more items
